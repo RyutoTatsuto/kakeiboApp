@@ -1,0 +1,12 @@
+### Django ###
+*.log
+*.pot
+*.pyc
+.env
+__pychache__/
+migrations/
+local_settings.py
+media
+
+### コンテナは一旦同期の対象としない ###
+.devcontainer/
