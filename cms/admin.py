@@ -34,6 +34,17 @@ class ResidentsAdmin(admin.ModelAdmin):
     list_display_links = ('resident_id',)
 
 
+class PurchaseHistoriesAdmin(admin.ModelAdmin):
+    '''
+    購入履歴テーブル
+    '''
+    # adminに表示する項目
+    list_display = ('purchase_history_id', 'payment_date', 'price',)
+    # クリックできる項目
+    list_display_links = ('purchase_history_id',)
+
+
 admin.site.register(Residents, ResidentsAdmin)
 admin.site.register(MajorCategories, MajorCategoriesAdmin)
 admin.site.register(PaymentMethods, PaymentMethodsAdmin)
+admin.site.register(PurchaseHistories, PurchaseHistoriesAdmin)
