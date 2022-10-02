@@ -4,6 +4,16 @@ from cms.models import PurchaseHistories, Residents, MajorCategories, PaymentMet
 ''' DBのレコードの項目が詳細に見られるようにカスタマイズ '''
 
 
+class MajorCategoriesAdmin(admin.ModelAdmin):
+    '''
+    大カテゴリテーブル
+    '''
+    # adminに表示する項目
+    list_display = ('major_category_id', 'major_category_name',)
+    # クリックできる項目
+    list_display_links = ('major_category_id',)
+
+
 class ResidentsAdmin(admin.ModelAdmin):
     ''' 
     住民テーブル
@@ -15,3 +25,4 @@ class ResidentsAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Residents, ResidentsAdmin)
+admin.site.register(MajorCategories, MajorCategoriesAdmin)
