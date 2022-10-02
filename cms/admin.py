@@ -14,6 +14,16 @@ class MajorCategoriesAdmin(admin.ModelAdmin):
     list_display_links = ('major_category_id',)
 
 
+class PaymentMethodsAdmin(admin.ModelAdmin):
+    '''
+    支払い方法テーブル
+    '''
+    # adminに表示する項目
+    list_display = ('payment_method_id', 'payment_method_name',)
+    # クリックできる項目
+    list_display_links = ('payment_method_id',)
+
+
 class ResidentsAdmin(admin.ModelAdmin):
     ''' 
     住民テーブル
@@ -26,3 +36,4 @@ class ResidentsAdmin(admin.ModelAdmin):
 
 admin.site.register(Residents, ResidentsAdmin)
 admin.site.register(MajorCategories, MajorCategoriesAdmin)
+admin.site.register(PaymentMethods, PaymentMethodsAdmin)
