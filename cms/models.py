@@ -39,7 +39,7 @@ class PurchaseHistories(models.Model):
     payment_date = models.DateField('支払い日', default=timezone.now)
     resident_id = models.ForeignKey(Residents, on_delete=models.DO_NOTHING)
     memo = models.TextField('メモ', blank=True)
-    editing_time = models.DateTimeField('修正日時', blank=True)
+    editing_time = models.DateTimeField('修正日時', blank=True, null=True)
     registering_time = models.DateTimeField('登録時間')
 
     def __str__(self) -> str:
