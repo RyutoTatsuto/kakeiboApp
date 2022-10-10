@@ -12,5 +12,5 @@ def purchase_histories_list(request):
                                .order_by('purchase_history_id'))
     
     return render(request,
-                  'cms/',
+                  'cms/purchase_histories_list.html',
                   {'purchase_histories_list': purchase_histories_list})
