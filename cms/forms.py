@@ -8,4 +8,4 @@ class PurchaseItemForm(ModelForm):
     class Meta:
         model = PurchaseHistories
         fields = ('payment_date', 'price',
-                  'major_category_id', 'payment_method_id', 'resident_id',)
+                  'major_category_id', 'payment_method_id', 'resident_id', 'memo')
