@@ -13,15 +13,17 @@
                 <th scope="col">カテゴリ</th>
                 <th scope="col">金額</th>
                 <th scope="col">払った人</th>
+                <th scope="col">操作</th>
             </tr>
         </thead>
         <tbody>
             {% for item in purchase_histories_list %}
             <tr>
-                <th scope="row">{{ item.payment_date }}</th>
-                <th scope="row">{{ item.major_category_id }}</th>
-                <th scope="row">{{ item.price }}</th>
-                <th scope="row">{{ item.resident_id }}</th>
+                <td>{{ item.payment_date }}</td>
+                <td>{{ item.major_category_id }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.resident_id }}</td>
+                <td><a href="{% url 'cms:purchase_item_edit' purchase_history_id=item.purchase_history_id %}" class="btn btn-outline-primary btn-sm">編集</a></td>
             </tr>
             {% endfor %}
         </tbody>

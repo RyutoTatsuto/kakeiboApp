@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 from django.utils import timezone
 
@@ -38,9 +39,9 @@ class PurchaseHistories(models.Model):
     payment_method_id = models.ForeignKey(PaymentMethods, on_delete=models.DO_NOTHING)
     payment_date = models.DateField('支払い日', default=timezone.now)
     resident_id = models.ForeignKey(Residents, on_delete=models.DO_NOTHING)
-    memo = models.TextField('メモ', blank=True)
-    editing_time = models.DateTimeField('修正日時', blank=True, null=True)
-    registering_time = models.DateTimeField('登録時間')
+    memo = models.TextField('メモ', blank=True, default="")
+    editing_time = models.DateTimeField('修正日時', default=timezone.now)
+    registering_time = models.DateTimeField('登録時間', default=timezone.now)
 
     def __str__(self) -> str:
         return str(self.purchase_history_id)
