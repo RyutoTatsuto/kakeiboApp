@@ -18,10 +18,10 @@
         <tbody>
             {% for item in purchase_histories_list %}
             <tr>
-                <th scope="row">{{ item.payment_date }}</th>
-                <th scope="row">{{ item.major_category_id }}</th>
-                <th scope="row">{{ item.price }}</th>
-                <th scope="row">{{ item.resident_id }}</th>
+                <td>{{ item.payment_date }}</td>
+                <td>{{ item.major_category_id }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.resident_id }}</td>
             </tr>
             {% endfor %}
         </tbody>
